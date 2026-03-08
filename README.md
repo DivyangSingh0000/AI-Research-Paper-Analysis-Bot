@@ -37,21 +37,21 @@ GROQ_API_KEY=your_secrit_api_key
 ## Architecture
 ------------
 ```
-┌─────────────┐      ┌─────────────────────────────────────┐
-│   Client    │ ───▶ │           FastAPI Server            │
-└─────────────┘      │  /research  │  /websocket           │
-                     └───────────────┬─────────────────────┘
+┌─────────────┐       ┌─────────────────────────────────────┐
+│   Client    │ ───▶ │           FastAPI Server             │
+└─────────────┘       │                                     │
+                      └───────────────┬─────────────────────┘
                                      │
                               ┌──────▼──────┐
                               │  LangChain  │
-                              │  ReAct Agent│
+                              │             │
                               └──────┬──────┘
                                      │
           ┌──────────────────────────┼──────────────────────────┐
           ▼                          ▼                          ▼
 ┌─────────────────┐      ┌─────────────────────┐      ┌─────────────────┐
 │  Web Search     │      │   Web Scraper       │      │   Memory Store  │
-│  (Tavily)       │      │   (trafilatura)     │      │   (JSON file)   │
+│                 │      │                     │      │                 │
 └─────────────────┘      └─────────────────────┘      └─────────────────┘
 ```
 
@@ -97,3 +97,4 @@ To use the AI Research Paper Analysis Chat Bot, follow these steps:
 ## Contributing
 ------------
 This repository is intended for educational purposes and does accept further contributions. It serves as supporting material for a github community that demonstrates how to build this project. Feel free to utilize and enhance the app based on your own requirements.
+
